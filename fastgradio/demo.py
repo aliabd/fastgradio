@@ -1,6 +1,6 @@
-import gradio
-from mappings import mappings
-import fastai
+from gradio import Interface
+from fastgradio.mappings import *
+from fastai.learner import Learner
 
 
 class Demo:
@@ -11,7 +11,7 @@ class Demo:
         """
         :param learner: the fastai Learner object to wrap an interface around.
         """
-        if isinstance(learner, fastai.learner.Learner):
+        if isinstance(learner, Learner):
             self.learner = learner
             self.types = getattr(self.learner.dls, '_types')[tuple]
         else:
@@ -51,6 +51,6 @@ class Demo:
         except KeyError:
             raise KeyError(f"fastgradio does not yet support {self.types[1]} as an output. Please use gradio "
                            f"instead and create your own fn, inputs and outputs.")
-        gradio.Interface(fn=self.learner_predict, inputs=inputs, outputs=outputs,
+        Interface(fn=self.learner_predict, inputs=inputs, outputs=outputs,
                          **kwargs).launch(share=share, debug=debug, auth=auth)
 

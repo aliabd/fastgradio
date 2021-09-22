@@ -1,7 +1,10 @@
 from gradio import inputs, outputs
 import fastai
 
-
+"""
+mappings is a dictionary that maps the fastai data type to the corresponding gradio input/output interface 
+and pre/post-processing step. 
+"""
 mappings = {
     fastai.torch_core.TensorImage: {
         "type": inputs.Image(type='file', label='input'),

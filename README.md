@@ -18,7 +18,7 @@ Demo(learner).launch()
 
 This will create an interface like the one below: 
 
-<img src="https://i.ibb.co/NjSG5xv/dog-interface.gif"/>
+<img src="https://i.ibb.co/P1KTN5y/dog-interface.gif"/>
 
 For more info on usage, check the [example notebook](https://github.com/aliabd/fastgradio/blob/main/examples/Using%20fastgradio%20with%20Vision.ipynb)
 
